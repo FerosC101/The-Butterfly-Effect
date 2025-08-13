@@ -1,5 +1,4 @@
 extends Node
-class_name Objectives
 
 signal completed(desc: String)
 signal failed(desc: String)
@@ -16,8 +15,9 @@ func start() -> void:
 
 func update_check() -> void:
 	if World.time_months >= active.deadline_months:
-		var ok_gdp := World._sum_gdp() >= active.start_gdp * 2.0
-		var ok_happy := World._avg_happiness() >= float(active.min_happy)
+		var ok_gdp: bool = World._sum_gdp() >= active.start_gdp * 2.0
+		var ok_happy: bool = World._avg_happiness() >= float(active.min_happy)
+		
 		if ok_gdp and ok_happy:
 			emit_signal("completed", active.desc)
 			EventBus.push("[Objective] Completed.")

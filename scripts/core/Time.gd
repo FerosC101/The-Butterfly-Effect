@@ -1,5 +1,4 @@
 extends Node
-class_name Time
 
 signal tick(months: float)
 

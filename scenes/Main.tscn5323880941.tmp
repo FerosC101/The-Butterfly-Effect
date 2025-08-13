@@ -52,12 +52,6 @@ layout_mode = 2
 [node name="ActionsVbox" type="VBoxContainer" parent="HUD/HSplitContainer/LeftPanel"]
 layout_mode = 2
 
-[node name="BtnRain" type="Button" parent="HUD/HSplitContainer/LeftPanel/ActionsVbox"]
-layout_mode = 2
-
-[node name="BtnTax" type="Button" parent="HUD/HSplitContainer/LeftPanel/ActionsVbox"]
-layout_mode = 2
-
 [node name="RightPanel" type="VBoxContainer" parent="HUD/HSplitContainer"]
 layout_mode = 2
 
