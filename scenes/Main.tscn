@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpmairhadvoop"]
+
+[ext_resource type="Script" uid="uid://ciu0wj6xxmcbg" path="res://scenes/Main.gd" id="1_rvslj"]
+[ext_resource type="Script" uid="uid://psfa6n6bn0s" path="res://ui/ChartControl.gd" id="2_0bbpv"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rvslj")
+
+[node name="HUD" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopBar" type="VBoxContainer" parent="HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/TopBar"]
+layout_mode = 2
+
+[node name="WorldTime" type="Label" parent="HUD/TopBar/HBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="HUD/TopBar/HBoxContainer"]
+layout_mode = 2
+
+[node name="DIBPanel" type="HBoxContainer" parent="HUD/TopBar/HBoxContainer"]
+layout_mode = 2
+
+[node name="DIBLabel" type="Label" parent="HUD/TopBar/HBoxContainer/DIBPanel"]
+layout_mode = 2
+text = "\"DIB: \"
+"
+
+[node name="DIBValue" type="Label" parent="HUD/TopBar/HBoxContainer/DIBPanel"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HUD"]
+layout_mode = 2
+offset_left = 71.0
+offset_right = 71.0
+offset_bottom = 49.0
+
+[node name="LeftPanel" type="VBoxContainer" parent="HUD/HSplitContainer"]
+layout_mode = 2
+
+[node name="ActionsVbox" type="VBoxContainer" parent="HUD/HSplitContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="RightPanel" type="VBoxContainer" parent="HUD/HSplitContainer"]
+layout_mode = 2
+
+[node name="MapView" type="Panel" parent="HUD/HSplitContainer/RightPanel"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HUD/HSplitContainer/RightPanel/MapView"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 6
+
+[node name="ChartsDock" type="Panel" parent="HUD/HSplitContainer/RightPanel"]
+layout_mode = 2
+
+[node name="Chart" type="Control" parent="HUD/HSplitContainer/RightPanel/ChartsDock"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_0bbpv")
+
+[node name="EventsFeed" type="RichTextLabel" parent="HUD/HSplitContainer/RightPanel"]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
